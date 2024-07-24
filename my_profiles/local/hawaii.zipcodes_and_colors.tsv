@@ -1,0 +1,140 @@
+county	city	zipcode	color
+Hawaii	Captain Cook	96704	#E67030
+Hawaii	Hakalau	96710	#E67B32
+Hawaii	Hawaii National Park	96718	#416DCE
+Hawaii	Hawi	96719	#E2572B
+Hawaii	Hilo	96720	#5A1DA0
+Hawaii	Hilo	96721	#87BB6C
+Hawaii	Holualoa	96725	#C8B944
+Hawaii	Honaunau	96726	#C3BA46
+Hawaii	Honokaa	96727	#DC2C24
+Hawaii	Honomu	96728	#7CB879
+Hawaii	Kailua Kona	96740	#D7AF3E
+Hawaii	Kailua Kona	96745	#E68C36
+Hawaii	Kamuela	96743	#4063CF
+Hawaii	Kapaau	96755	#D9AE3E
+Hawaii	Keaau	96749	#DEA63B
+Hawaii	Kealakekua	96750	#4580CA
+Hawaii	Keauhou	96739	#E04A29
+Hawaii	Kurtistown	96760	#4067CF
+Hawaii	Laupahoehoe	96764	#D3B23F
+Hawaii	Mountain View	96771	#E1532A
+Hawaii	Naalehu	96772	#416ACF
+Hawaii	Ninole	96773	#3F4ECB
+Hawaii	Ocean View	96737	#5EA9A1
+Hawaii	Ookala	96774	#4040C6
+Hawaii	Paauilo	96776	#65AD96
+Hawaii	Pahala	96777	#59A4A9
+Hawaii	Pahoa	96778	#5E1D9D
+Hawaii	Papaaloa	96780	#4D92BF
+Hawaii	Papaikou	96781	#E4682F
+Hawaii	Pepeekeo	96783	#E49838
+Hawaii	Volcano	96785	#E0A13A
+Hawaii	Waikoloa	96738	#E56C2F
+Maui	Haiku	96708	#E69337
+Maui	Hana	96713	#B0BD4F
+Maui	Hoolehua	96729	#DF4628
+Maui	Kahului	96732	#B2BD4D
+Maui	Kahului	96733	#B5BD4C
+Maui	Kalaupapa	96742	#9BBE5B
+Maui	Kaunakakai	96748	#B7BD4B
+Maui	Kihei	96753	#9EBE5A
+Maui	Kualapuu	96757	#E39A39
+Maui	Kula	96790	#73B583
+Maui	Lahaina	96761	#6FB388
+Maui	Lahaina	96767	#ADBD50
+Maui	Lanai City	96763	#DF4227
+Maui	Makawao	96768	#E67F33
+Maui	Maunaloa	96770	#4531BB
+Maui	Paia	96779	#4F97BB
+Maui	Pukalani	96788	#3E59CF
+Maui	Puunene	96784	#8CBC68
+Maui	Wailuku	96793	#91BC64
+Honolulu	Aiea	96701	#56A0AE
+Honolulu	Camp H M Smith	96861	#3F47C9
+Honolulu	Ewa Beach	96706	#DD3124
+Honolulu	Fort Shafter	96858	#E04E2A
+Honolulu	Haleiwa	96712	#3F4BCA
+Honolulu	Hauula	96717	#5BA6A7
+Honolulu	Hickam Afb	96853	#CEB541
+Honolulu	Honolulu	96801	#4E95BD
+Honolulu	Honolulu	96802	#7EB976
+Honolulu	Honolulu	96803	#4B8DC2
+Honolulu	Honolulu	96804	#4A8AC4
+Honolulu	Honolulu	96805	#3F44C8
+Honolulu	Honolulu	96806	#3F52CD
+Honolulu	Honolulu	96807	#A6BE55
+Honolulu	Honolulu	96808	#5CA7A4
+Honolulu	Honolulu	96809	#3E5DD0
+Honolulu	Honolulu	96810	#472EB9
+Honolulu	Honolulu	96811	#62AB9C
+Honolulu	Honolulu	96812	#DE3926
+Honolulu	Honolulu	96813	#7AB77B
+Honolulu	Honolulu	96814	#C1BA47
+Honolulu	Honolulu	96815	#4039C4
+Honolulu	Honolulu	96816	#E59638
+Honolulu	Honolulu	96817	#DDA83C
+Honolulu	Honolulu	96818	#60AA9F
+Honolulu	Honolulu	96819	#E35F2D
+Honolulu	Honolulu	96820	#3F56CE
+Honolulu	Honolulu	96821	#CCB742
+Honolulu	Honolulu	96822	#80B973
+Honolulu	Honolulu	96823	#4683C8
+Honolulu	Honolulu	96824	#DD3525
+Honolulu	Honolulu	96825	#E68935
+Honolulu	Honolulu	96826	#75B681
+Honolulu	Honolulu	96827	#E25B2C
+Honolulu	Honolulu	96828	#DBAC3D
+Honolulu	Honolulu	96830	#5199B8
+Honolulu	Honolulu	96835	#A8BD53
+Honolulu	Honolulu	96836	#4885C7
+Honolulu	Honolulu	96837	#3F60D0
+Honolulu	Honolulu	96838	#E69036
+Honolulu	Honolulu	96839	#71B486
+Honolulu	Honolulu	96840	#DCAB3C
+Honolulu	Honolulu	96841	#E4642E
+Honolulu	Honolulu	96843	#4B25B0
+Honolulu	Honolulu	96844	#529BB6
+Honolulu	Honolulu	96846	#4377CD
+Honolulu	Honolulu	96847	#4D22AE
+Honolulu	Honolulu	96848	#E68534
+Honolulu	Honolulu	96849	#561EA4
+Honolulu	Honolulu	96850	#8ABB6A
+Honolulu	Kaaawa	96730	#78B67E
+Honolulu	Kahuku	96731	#E67832
+Honolulu	Kailua	96734	#BEBB48
+Honolulu	Kaneohe	96744	#D0B441
+Honolulu	Kapolei	96707	#E67431
+Honolulu	Kapolei	96709	#6DB28B
+Honolulu	Kunia	96759	#99BD5D
+Honolulu	Laie	96762	#ABBD52
+Honolulu	M C B H Kaneohe Bay	96863	#A0BE58
+Honolulu	Mililani	96789	#DE3D27
+Honolulu	Pearl City	96782	#D5B03F
+Honolulu	Pearl Harbor	96860	#447ACD
+Honolulu	Schofield Barracks	96857	#A3BE57
+Honolulu	Tripler Medical Center	96859	#85BA6F
+Honolulu	Wahiawa	96786	#E19F3A
+Honolulu	Waialua	96791	#4333BE
+Honolulu	Waianae	96792	#64AC99
+Honolulu	Waimanalo	96795	#447DCC
+Honolulu	Waipahu	96797	#4E1FAB
+Honolulu	Wake Island	96898	#83BA71
+Honolulu	Wheeler Army Airfield	96854	#482BB6
+Kauai	Anahola	96703	#4236C1
+Kauai	Eleele	96705	#69B091
+Kauai	Hanalei	96714	#4274CE
+Kauai	Hanamaulu	96715	#511EA8
+Kauai	Hanapepe	96716	#D2B340
+Kauai	Kalaheo	96741	#559EB1
+Kauai	Kapaa	96746	#4988C5
+Kauai	Kaumakani	96747	#4C90C0
+Kauai	Kealia	96751	#DB2823
+Kauai	Kekaha	96752	#403DC5
+Kauai	Kilauea	96754	#58A2AC
+Kauai	Koloa	96756	#94BD62
+Kauai	Lawai	96765	#4271CE
+Kauai	Lihue	96766	#8FBC66
+Kauai	Makaweli	96769	#4A28B3
+Kauai	Princeville	96722	#C5B945
+Kauai	Waimea	96796	#96BD5F

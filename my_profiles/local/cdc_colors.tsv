@@ -1,0 +1,190 @@
+location	Kauai County HI	#4A8CC2
+location	Honolulu County HI	#71B486
+location	Maui County HI	#ABBD52
+location	Hawaii County HI	#DEA73C
+
+division	Hawaii	#529AB6
+division	Virginia	#AABD52
+
+country	Japan	#529AB6
+country	USA	#AABD52
+
+recency	Older	#447CCD
+recency	One month ago	#5EA9A1
+recency	One week ago	#8ABB6A
+recency	3-7 days ago	#BEBB48
+recency	1-2 days ago	#E29E39
+recency	New	#E2562B
+
+recency_sequenced	Older	#4068CF
+recency_sequenced	Six weeks ago	#5098B9
+recency_sequenced	Five weeks ago	#6CB28C
+recency_sequenced	Four weeks ago	#94BD62
+recency_sequenced	Three weeks ago	#BFBB47
+recency_sequenced	Two weeks ago	#DFA53B
+recency_sequenced	Last week	#E67131
+recency_sequenced	This week	#DB2823
+
+recency_collected	Older	#3F52CD
+recency_collected	Eight weeks ago	#4681CA
+recency_collected	Seven weeks ago	#57A1AD
+recency_collected	Six weeks ago	#70B487
+recency_collected	Five weeks ago	#90BC65
+recency_collected	Four weeks ago	#B4BD4C
+recency_collected	Three weeks ago	#D3B240
+recency_collected	Two weeks ago	#E59638
+recency_collected	Last week	#E4642E
+recency_collected	This week	#DB2823
+
+recency_submitted	Older	#4068CF
+recency_submitted	Six weeks ago	#5098B9
+recency_submitted	Five weeks ago	#6CB28C
+recency_submitted	Four weeks ago	#94BD62
+recency_submitted	Three weeks ago	#BFBB47
+recency_submitted	Two weeks ago	#DFA53B
+recency_submitted	Last week	#E67131
+recency_submitted	This week	#DB2823
+
+region	North America	#4C90C0
+
+zip_code	96704	#5E1D9D
+zip_code	96710	#4F1EAA
+zip_code	96720	#4928B4
+zip_code	96745	#4433BE
+zip_code	96771	#403EC6
+zip_code	96778	#3F4BCA
+zip_code	96708	#3E57CE
+zip_code	96732	#4064CF
+zip_code	96790	#426FCE
+zip_code	96761	#447BCD
+zip_code	96763	#4785C7
+zip_code	96768	#4B8EC1
+zip_code	96784	#4F97BA
+zip_code	96793	#549EB2
+zip_code	96701	#5AA4A9
+zip_code	96706	#5FAA9F
+zip_code	96712	#66AE95
+zip_code	96813	#6DB28B
+zip_code	96814	#74B582
+zip_code	96815	#7CB878
+zip_code	96816	#84BA6F
+zip_code	96817	#8DBC67
+zip_code	96818	#96BD60
+zip_code	96819	#9FBE59
+zip_code	96822	#A8BD53
+zip_code	96825	#B2BD4E
+zip_code	96826	#BABC4A
+zip_code	96734	#C3BA46
+zip_code	96744	#CBB842
+zip_code	96707	#D1B340
+zip_code	96709	#D8AE3E
+zip_code	96762	#DDA83C
+zip_code	96789	#E1A03A
+zip_code	96782	#E59738
+zip_code	96786	#E68D36
+zip_code	96791	#E68033
+zip_code	96792	#E67431
+zip_code	96795	#E4652E
+zip_code	96797	#E2562B
+zip_code	96703	#DF4728
+zip_code	96705	#DD3726
+zip_code	96741	#DB2823
+
+OCCC_location	Annex 1	#5E1D9D
+OCCC_location	Annex 2	#462EB9
+OCCC_location	M1	#3F4CCB
+OCCC_location	M2	#416CCE
+OCCC_location	M4	#4887C6
+OCCC_location	M7	#539CB3
+OCCC_location	M8	#62AB9C
+OCCC_location	M11	#74B582
+OCCC_location	M13	#89BB6B
+OCCC_location	M17	#A0BE59
+OCCC_location	M18	#B7BD4B
+OCCC_location	M19	#CCB742
+OCCC_location	FOOD SERVICE UNIT	#DDAA3C
+OCCC_location	Mauka	#E69537
+OCCC_location	Makai	#E67631
+OCCC_location	OPERATIONS	#E14F2A
+OCCC_location	PERIMETER	#DB2823
+
+OCCC_status	ACO	#4A8CC2
+OCCC_status	STAFF	#71B486
+OCCC_status	Inmate	#ABBD52
+OCCC_status	Unknown	#DEA73C
+
+pangolin_lineage	B.1.1.7	#1E80A0
+pangolin_lineage	Q.3	#1b7591
+pangolin_lineage	B.1.617.2	#F28E2B
+pangolin_lineage	AY.1	#A13703
+pangolin_lineage	AY.2	#C14F22
+pangolin_lineage	AY.3	#d87c27
+pangolin_lineage	AY.3.1	#d17627
+pangolin_lineage	AY.4	#cc7524
+pangolin_lineage	AY.5	#c66f23
+pangolin_lineage	AY.9	#ba6821
+pangolin_lineage	AY.12	#bf6e22
+pangolin_lineage	AY.13	#b26620
+pangolin_lineage	AY.14	#a55f1d
+pangolin_lineage	AY.15	#9e5b1c
+pangolin_lineage	AY.20	#99581b
+pangolin_lineage	AY.21	#93551a
+pangolin_lineage	AY.23	#8c5019
+pangolin_lineage	AY.25	#7f4916
+pangolin_lineage	AY.26	#724214
+pangolin_lineage	AY.29	#663a12
+pangolin_lineage	P.1	#83962A
+pangolin_lineage	P.1.1	#768725
+pangolin_lineage	P.1.2	#6b7a22
+pangolin_lineage	P.1.10	#606d1e
+pangolin_lineage	B.1.351	#8E49B5
+pangolin_lineage	B.1.526	#EEC9E5
+pangolin_lineage	B.1.427	#CD9BBC
+pangolin_lineage	B.1.429	#DFB1D1
+pangolin_lineage	P.2	#8D608D
+pangolin_lineage	R.1	#344f62
+pangolin_lineage	B.6	#345267
+pangolin_lineage	B.1.609	#35556d
+pangolin_lineage	B.1.605	#355871
+pangolin_lineage	B.1.601	#355b77
+pangolin_lineage	B.1.596	#355e7c
+pangolin_lineage	B.1.595	#356282
+pangolin_lineage	B.1.588	#356486
+pangolin_lineage	B.1.575	#36688c
+pangolin_lineage	B.1.568	#366b91
+pangolin_lineage	B.1.561	#366e97
+pangolin_lineage	B.1.526.2	#36719b
+pangolin_lineage	B.1.517	#3674a1
+pangolin_lineage	B.1.466.2	#3678a6
+pangolin_lineage	B.1.413	#367bac
+pangolin_lineage	B.1.403	#377db0
+pangolin_lineage	B.1.400	#3781b6
+pangolin_lineage	B.1.369	#3784bb
+pangolin_lineage	B.1.357	#3787c0
+pangolin_lineage	B.1.340	#3b8ac2
+pangolin_lineage	B.1.298	#408cc3
+pangolin_lineage	B.1.265	#448fc5
+pangolin_lineage	B.1.243	#4892c6
+pangolin_lineage	B.1.241	#4c94c7
+pangolin_lineage	B.1.240	#5197c9
+pangolin_lineage	B.1.234	#569aca
+pangolin_lineage	B.1.139	#599ccb
+pangolin_lineage	B.1.126	#5e9fcd
+pangolin_lineage	B.1.108	#62a2ce
+pangolin_lineage	B.1.37	#67a5d0
+pangolin_lineage	B.1.36.8	#6ba7d1
+pangolin_lineage	B.1.2	#6faad2
+pangolin_lineage	B.1.1.519	#74add4
+pangolin_lineage	B.1.1.416	#78b0d5
+pangolin_lineage	B.1.1.380	#7cb2d6
+pangolin_lineage	B.1.1.318	#80b5d8
+pangolin_lineage	B.1.1.316	#85b8d9
+pangolin_lineage	B.1.1.222	#8abbdb
+pangolin_lineage	B.1.1.207	#8dbddc
+pangolin_lineage	B.1.1	#92c0dd
+pangolin_lineage	B.1	#96c3df
+pangolin_lineage	B	#9bc5e0
+pangolin_lineage	A.3	#9fc8e2
+pangolin_lineage	A.2.2	#a3cbe3
+pangolin_lineage	A.1	#a8cde4
+

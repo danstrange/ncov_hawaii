@@ -1,0 +1,73 @@
+# Define locations for which builds should be created.
+# For each build we specify a subsampling scheme via an explicit key.
+# These subsampling schemes are defined at the bottom of this file.
+# (They override the defaults)
+inputs:
+    - name: local_data
+      metadata: data/metadata.tsv
+      sequences: data/sequences.fasta
+
+builds:
+  hawaii_county:
+    subsampling_scheme: hawaii_local
+    region: North America
+    country: USA
+    division: Hawaii
+    focus: division
+    transmission: location
+    colors: "my_profiles/local/cdc_colors.tsv"
+    auspice_config: "my_profiles/local/hawaii-county_auspice_config.json"
+#  hawaii_zipcode:
+#    subsampling_scheme: hawaii_local
+#    region: North America
+#    country: USA
+#    division: Hawaii
+#    focus: division
+#    transmission: zip_code
+#    colors: "my_profiles/local/cdc_colors.tsv"
+#    auspice_config: "my_profiles/local/hawaii-zipcode_auspice_config.json"
+
+# if different exposure traits should be used for some builds, specify here
+# otherwise the default exposure in defaults/parameters.yaml will be used
+
+#exposure:
+#  hawaii_county:
+#    trait: "location"
+#    exposure: "location_exposure"
+#  hawaii_zipcode:
+#    trait: "zip_code"
+#    exposure: "zip_code_exposure"
+
+#traits:
+#  hawaii_county:
+#    sampling_bias_correction: 2.5
+#    columns: ["location_exposure"]
+#  hawaii_zipcode:
+#    sampling_bias_correction: 2.5
+#    columns: ["zip_code_exposure"]
+
+files:
+  include: "my_profiles/local/include.txt"
+  #exclude: "my_profiles/local/exclude.txt"
+  lat_longs: "my_profiles/local/lat_longs.tsv"
+  #legacy_clades: "my_profiles/local/legacy_clades.tsv"
+  description: "my_profiles/local/description.md"
+  ordering: "my_profiles/local/color_ordering.tsv"
+
+subsampling:
+  # Custom subsampling logic for global build
+  hawaii_local:
+    division:
+      group_by: "year month"
+      seq_per_group: 300
+      exclude: "--exclude-where 'region!={region}' 'country!={country}' 'division!={division}'"
+
+#custom_rules:
+#  - workflow/snakemake_rules/export_for_nextstrain.smk
+#  - nextstrain_profiles/nextstrain/subsampling_ranges.smk
+
+# S3 and slack options are related to Nextstrain live builds and don't need to be modified for local builds
+s3_staging_url: s3://nextstrain-staging
+slack_token: ~
+slack_channel: "#ncov-gisaid-updates"
+

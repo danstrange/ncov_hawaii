@@ -1,0 +1,11 @@
+configfile:
+  - my_profiles/local/builds.yaml
+  - my_profiles/local/hawaii-config.yaml
+
+cores: 32
+keep-going: True
+printshellcmds: True
+reason: True
+restart-times: 1
+stats: stats.json
+set-threads: tree=16

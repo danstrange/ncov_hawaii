@@ -1,0 +1,182 @@
+{
+  "title": "Genomic epidemiology of SARS-CoV-2 in Hawaii for 2023",
+  "build_url": "https://github.com/nextstrain/ncov",
+  "maintainers": [
+    {"name": "D. Strange"}
+  ],
+  "colorings": [
+    {
+      "key": "HI_cluster",
+      "title": "HI cluster",
+      "type": "categorical"
+    },
+    {
+      "key": "epi_more",
+      "title": "Epi data HDOH",
+      "type": "categorical"
+    },
+    {
+      "key": "zip_code",
+      "title": "Zip code",
+      "type": "categorical"
+    },
+    {
+      "key": "location",
+      "title": "Location (HI County)",
+      "type": "categorical"
+    },
+    {
+      "key": "division",
+      "title": "Division (US State)",
+      "type": "categorical"
+    },
+    {
+      "key": "country",
+      "title": "Country",
+      "type": "categorical"
+    },
+    {
+      "key": "region",
+      "title": "Region (Continent)",
+      "type": "categorical"
+    },
+    {
+      "key": "nextstrain_clade",
+      "title": "Nextstrain clade",
+      "type": "categorical"
+    },
+    {
+      "key": "subclade_membership",
+      "title": "Emerging clade",
+      "type": "categorical"
+    },
+    {
+      "key": "pango_lineage",
+      "title": "Pango lineage",
+      "type": "categorical"
+    },
+    {
+      "key": "GISAID_clade",
+      "title": "GISAID Clade",
+      "type": "categorical"
+    },
+    {
+      "key": "host",
+      "title": "Host",
+      "type": "categorical"
+    },
+    {
+      "key": "age",
+      "title": "Age",
+      "type": "continuous"
+    },
+    {
+      "key": "sex",
+      "title": "Sex",
+      "type": "categorical"
+    },
+    {
+      "key": "author",
+      "title": "Authors",
+      "type": "categorical"
+    },
+    {
+      "key": "originating_lab",
+      "title": "Originating Lab",
+      "type": "categorical"
+    },
+    {
+      "key": "submitting_lab",
+      "title": "Submitting Lab",
+      "type": "categorical"
+    },
+    {
+      "key": "date",
+      "title": "Collection Date",
+      "type": "categorical"
+    },
+    {
+      "key": "date_sequenced",
+      "title": "Sequencing Date",
+      "type": "categorical"
+    },
+	{
+      "key": "sequencing_platform",
+      "title": "Sequencing Platform",
+      "type": "categorical"
+    },
+    {
+      "key": "date_submitted",
+      "title": "Submission Date",
+      "type": "categorical"
+    },
+    {
+      "key": "gisaid_epi_isl",
+      "type": "categorical"
+    },
+    {
+      "key": "genbank_accession",
+      "type": "categorical"
+    },
+    {
+      "key": "country_exposure",
+      "title": "Country of exposure",
+      "type": "categorical"
+    },
+    {
+      "key": "division_exposure",
+      "title": "Division of exposure",
+      "type": "categorical"
+    },
+    {
+      "key": "region_exposure",
+      "title": "Region of exposure",
+      "type": "categorical"
+    },
+    {
+      "key": "location_exposure",
+      "title": "Location of exposure",
+      "type": "categorical"
+    },
+    {
+      "key": "zip_code_exposure",
+      "title": "Zip code of exposure",
+      "type": "categorical"
+    }
+],
+  "geo_resolutions": [
+    "zip_code",
+    "location",
+    "division",
+    "country",
+    "region"
+  ],
+  "display_defaults": {
+    "color_by": "location",
+    "distance_measure": "num_date",
+    "geo_resolution": "location",
+    "map_triplicate": true,
+    "branch_label": "clade"
+  },
+  "filters": [
+    "HI_cluster",
+    "epi_more",
+    "location",
+    "country",
+    "division",
+    "region",
+    "date",
+	"sequencing_platform",
+    "date_sequenced",
+    "date_submitted",
+    "pango_lineage",
+    "nextstrain_clade",
+    "host"
+  ],
+  "panels": [
+    "tree",
+    "map",
+    "entropy",
+    "frequencies"
+  ]
+}
