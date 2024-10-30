@@ -16,7 +16,8 @@ if  not (Path(f"sequences_{timestamp}.fa").exists() and
     sys.exit(f"One or more of these 4 files can not be found!\nsequences_{timestamp}.fa\nmetadata_{timestamp}.txt\nlineage_report.{timestamp}.csv\nnextclade_report.{timestamp}.tsv\n")
 
 
-m = pd.read_csv("metadata.tsv", sep='\t', low_memory=False)
+#m = pd.read_csv("metadata.tsv", sep='\t', low_memory=False)
+m = pd.read_csv("metadata.tsv", sep='\t', low_memory=False, dtype=object)
 
 rdict = SeqIO.to_dict(SeqIO.parse(f"sequences_{timestamp}.fa", "fasta"))
 r = range(len(rdict.keys()))
@@ -60,7 +61,7 @@ n.set_index('seqName', inplace=True)
 n.rename(columns={'clade' : 'nextstrain_clade'}, inplace=True)
 m1.update(n)
 
-mm = pd.read_csv(f'metadata_{timestamp}.txt', sep='\t', low_memory=False)
+mm = pd.read_csv(f'metadata_{timestamp}.txt', sep='\t', low_memory=False, dtype=object)
 #mm.rename(columns={'Collection date' : 'date', 'Virus name' : 'strain', 'Accession ID' : 'gisaid_epi_isl', 'Sequence length' : 'length', 'Host' : 'host', 'Patient age' : 'age', 'Gender' : 'sex', 'Clade' : 'GISAID_clade', 'Submission date' : 'date_submitted'}, inplace=True)
 mm.set_index('strain', inplace=True)
 mm['date'] = pd.to_datetime(mm['date'], errors='coerce')

@@ -16,7 +16,8 @@ if  not (Path(f"sequences_{timestamp}.fa").exists() and
     sys.exit(f"One or more of these 4 files can not be found!\nsequences_{timestamp}.fa\nmetadata_{timestamp}.txt\nlineage_report.{timestamp}.csv\nnextclade_report.{timestamp}.tsv\n")
 
 
-m = pd.read_csv("metadata.tsv", sep='\t', low_memory=False)
+#m = pd.read_csv("metadata.tsv", sep='\t', low_memory=False)
+m = pd.read_csv("metadata.tsv", sep='\t', low_memory=False, dtype=object)
 
 rdict = SeqIO.to_dict(SeqIO.parse(f"sequences_{timestamp}.fa", "fasta"))
 r = range(len(rdict.keys()))
