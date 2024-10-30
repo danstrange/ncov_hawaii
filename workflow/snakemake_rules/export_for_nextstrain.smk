@@ -85,45 +85,13 @@ rule export_all_regions:
         mem_mb=lambda wildcards, input: 5 * int(input.metadata.size / 1024 / 1024)
     conda: config["conda_environment"]
     shell:
-        """
+        r"""
         python3 ./scripts/check_missing_locations.py \
             --metadata {input.metadata} \
             --colors {input.colors} \
             --latlong {input.lat_longs}
         """
 
-
-rule mutation_summary:
-    message: "Summarizing {input.alignment}"
-    input:
-        alignment = rules.align.output.alignment,
-        insertions = rules.align.output.insertions,
-        translations = rules.align.output.translations,
-        reference = config["files"]["alignment_reference"],
-        genemap = config["files"]["annotation"]
-    output:
-        mutation_summary = "results/mutation_summary_{origin}.tsv.xz"
-    log:
-        "logs/mutation_summary_{origin}.txt"
-    benchmark:
-        "benchmarks/mutation_summary_{origin}.txt"
-    params:
-        outdir = "results/translations",
-        basename = "seqs_{origin}",
-        genes=config["genes"],
-    conda: config["conda_environment"]
-    shell:
-        """
-        python3 scripts/mutation_summary.py \
-            --alignment {input.alignment} \
-            --insertions {input.insertions} \
-            --directory {params.outdir} \
-            --basename {params.basename} \
-            --reference {input.reference} \
-            --genes {params.genes:q} \
-            --genemap {input.genemap} \
-            --output {output.mutation_summary} 2>&1 | tee {log}
-        """
 
 #
 # Rule for generating a per-build auspice config
@@ -345,7 +313,7 @@ rule dated_json:
         date = r"\d{4}-\d{2}-\d{2}"
     conda: config["conda_environment"]
     shell:
-        """
+        r"""
         cp {input.auspice_json} {output.dated_auspice_json}
         cp {input.tip_frequencies_json} {output.dated_tip_frequencies_json}
         cp {input.root_sequence_json} {output.dated_root_sequence_json}

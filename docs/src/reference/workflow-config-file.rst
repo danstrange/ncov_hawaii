@@ -15,6 +15,8 @@ Primary configuration
 Parameters in this section define the main inputs and outputs of the workflow, as well as the commonly used ``subsampling`` rule.
 Often these will be the only parameters you need to modify.
 
+.. _inputs:
+
 inputs
 ------
 
@@ -198,7 +200,7 @@ subsampling
 -----------
 
 -  type: object
--  description: Schemes for subsampling data prior to phylogenetic inference to avoid sampling bias or focus an analysis on specific spatial and/or temporal scales. `See the SARS-CoV-2 tutorial for more details on defining subsampling schemes <../reference/customizing-analysis.html#subsampling>`__.
+-  description: Schemes for subsampling data prior to phylogenetic inference to avoid sampling bias or focus an analysis on specific spatial and/or temporal scales. See the :doc:`genomic surveillance tutorial <../tutorial/genomic-surveillance>` for an example.
 
 Predefined subsampling schemes are:
 
@@ -400,6 +402,7 @@ strip_strain_prefixes
 -  description: A list of prefixes to strip from strain names in metadata and sequence records to maintain consistent strain names when analyzing data from multiple sources.
 -  default: ``["hCoV-19/", "SARS-CoV-2/"]``
 
+.. _auspice_json_prefix:
 
 auspice_json_prefix
 -------------------
@@ -428,7 +431,7 @@ genes
 -----
 
 -  type: array
--  description: A list of genes for which ``nextalign`` should generate amino acid sequences during the alignment process. Gene names must match the names provided in the gene map from the ``annotation`` parameter.
+-  description: A list of genes for which ``nextclade`` should generate amino acid sequences during the alignment process. Gene names must match the names provided in the gene map from the ``annotation`` parameter.
 -  default: ``["ORF1a", "ORF1b", "S", "ORF3a", "M", "N"]``
 -  used in rules: ``align``, ``build_align``, ``translate``, ``mutational_fitness``
 
@@ -510,17 +513,17 @@ alignment_reference
 ~~~~~~~~~~~~~~~~~~~
 
 -  type: string
--  description: Path to a FASTA-formatted sequence to use for alignment with ``nextalign``
+-  description: Path to a FASTA-formatted sequence to use for alignment with ``nextclade``
 -  default: ``defaults/reference_seq.fasta``
--  used in rules: ``align``, ``proximity_score`` (subsampling), ``build_align``, ``build_mutation_summary``
+-  used in rules: ``align``, ``proximity_score`` (subsampling)
 
 annotation
 ~~~~~~~~~~
 
 -  type: string
--  description: Path to a GFF-formatted annotation of gene coordinates (e.g., a “gene map”) for use by ``nextalign`` and mutation summaries.
+-  description: Path to a GFF-formatted annotation of gene coordinates (e.g., a “gene map”) for use by ``nextclade`` for codon-aware alignment.
 -  default: ``defaults/annotation.gff``
--  used in rules: ``align``, ``build_align``, ``build_mutation_summary``
+-  used in rules: ``align``
 
 outgroup
 ~~~~~~~~
@@ -594,6 +597,8 @@ Per-Rule configuration
 
 Each top-level parameter here corresponds to a single Snakemake rule.
 Note that ``subsampling`` is a commonly used rule configuration which is described separately in the Primary configuration section.
+
+.. _sanitize_metadata:
 
 sanitize_metadata
 -----------------
@@ -936,6 +941,34 @@ no_timetree
 -  description: Do not produce a time tree.
 -  default: ``false``
 
+colors
+------
+
+-  type: object
+-  description: Parameters for assigning colors in ``scripts/assign-colors.py``
+-  examples:
+
+.. code:: yaml
+
+   colors:
+     default:
+       clade_recency: "all"
+     global-6m:
+       # Override clade recency colors for "global-6m" build
+       clade_recency: "6M"
+
+Each named traits configuration (``default`` or build-named) supports the following attributes:
+
+.. contents::
+   :local:
+
+clade_recency
+~~~~~~~~~~~~~
+
+-  type: string
+-  format: `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601#Durations>`__ duration with optional ``P`` prefix (e.g. ``2M``, ``18M``, ``1Y6M``)
+-  description: restrict to clades found in tree within this duration from present
+-  default: ``all`` (no restriction)
 
 traits
 ------
@@ -978,12 +1011,29 @@ columns
 
 frequencies
 -----------
-- Valid attributes:
+-  type: object
+-  description: Parameters for specifying tip frequency calculations via ``augur frequencies``
+-  examples:
+
+.. code:: yaml
+
+   frequencies:
+     pivot_interval_units: "weeks"
+     default:
+       min_date: "6M"
+       narrow_bandwidth: 0.038
+     global_1m:
+       min_date: "1M"
+       narrow_bandwidth: 0.019
+     global_2020_to_2022:
+       min_date: "2020-01-01"
+       max_date: "2022-01-01"
+       narrow_bandwidth: 0.076
+
+Each named traits configuration (``default`` or build-named) supports specification of ``min_date``, ``max_date`` and ``narrow_bandwidth``. Other parameters can only be specified across all builds.
 
 .. contents::
    :local:
-
-.. _min_date-1:
 
 min_date
 ~~~~~~~~

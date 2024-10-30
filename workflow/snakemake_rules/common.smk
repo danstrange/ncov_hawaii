@@ -1,12 +1,30 @@
 """Small, shared functions used to generate inputs and parameters.
 """
 import datetime
+import isodate
 from itertools import product
 from shlex import (
     quote as shquote,       # shquote() is used in this file and also other workflow files
     split as shsplitwords,
 )
 from urllib.parse import urlsplit
+
+# TODO: deduplicate this with the same function in scripts/assign-colors.py.
+# There is no easy way to share functions between the workflow and that file at
+# the moment. One approach would be to surface it via Augur's Python API.
+def relative_date(duration: str):
+    """
+    Convert an ISO 8601 duration to an absolute date by subtracting it from the
+    current date.
+
+    `duration` should be a backwards-looking relative date in ISO 8601 duration
+    format with optional P prefix (e.g. '1W', 'P1W').
+    """
+    if duration.startswith('P'):
+        duration = duration
+    else:
+        duration = 'P' + duration
+    return datetime.date.today() - isodate.parse_duration(duration)
 
 def shquotewords(s: str) -> str:
     """
@@ -168,6 +186,27 @@ def _get_metadata_by_wildcards(wildcards):
     """
     return _get_metadata_by_build_name(wildcards.build_name)
 
+def _get_clade_recency_for_wildcards(wildcards):
+    # check if builds.yaml contains colors:{build_name}:clade_recency
+    if wildcards.build_name in config["colors"] and 'clade_recency' in config["colors"][wildcards.build_name]:
+        return config["colors"][wildcards.build_name]["clade_recency"]
+    # check if builds.yaml or parameters.yaml contains colors:default:clade_recency
+    elif "colors" in config and "clade_recency" in config["colors"]["default"]:
+        return config["colors"]["default"]["clade_recency"]
+    # else return sensible default value
+    else:
+        return "all"
+
+def _get_clade_recency_argument(wildcards):
+    clade_recency_setting = _get_clade_recency_for_wildcards(wildcards)
+    if clade_recency_setting == "all":
+        return ""
+    try:
+        relative_date(clade_recency_setting)
+        return "--clade-recency " + shquote(clade_recency_setting)
+    except:
+        raise Exception(f'clade_recency must be "all" or a duration string (e.g. "6M", "1Y"). Got: {clade_recency_setting!r}')
+
 def _get_trait_columns_by_wildcards(wildcards):
     if wildcards.build_name in config["traits"]:
         return config["traits"][wildcards.build_name]["columns"]
@@ -183,8 +222,8 @@ def _get_sampling_bias_correction_for_wildcards(wildcards):
 def _get_min_date_for_frequencies(wildcards):
     if wildcards.build_name in config["frequencies"] and "min_date" in config["frequencies"][wildcards.build_name]:
         return config["frequencies"][wildcards.build_name]["min_date"]
-    elif "frequencies" in config and "min_date" in config["frequencies"]:
-        return config["frequencies"]["min_date"]
+    elif "frequencies" in config and "min_date" in config["frequencies"]["default"]:
+        return config["frequencies"]["default"]["min_date"]
     else:
         # If not explicitly specified, default to 1 year back from the present
         min_date_cutoff = datetime.date.today() - datetime.timedelta(weeks=52)
@@ -195,8 +234,8 @@ def _get_min_date_for_frequencies(wildcards):
 def _get_max_date_for_frequencies(wildcards):
     if wildcards.build_name in config["frequencies"] and "max_date" in config["frequencies"][wildcards.build_name]:
         return config["frequencies"][wildcards.build_name]["max_date"]
-    elif "frequencies" in config and "max_date" in config["frequencies"]:
-        return config["frequencies"]["max_date"]
+    elif "frequencies" in config and "max_date" in config["frequencies"]["default"]:
+        return config["frequencies"]["default"]["max_date"]
     else:
         # Allow users to censor the N most recent days to minimize effects of
         # uneven recent sampling.
@@ -206,6 +245,17 @@ def _get_max_date_for_frequencies(wildcards):
         return numeric_date(
             datetime.date.today() - offset
         )
+
+def _get_narrow_bandwidth_for_wildcards(wildcards):
+    # check if builds.yaml contains frequencies:{build_name}:narrow_bandwidth
+    if wildcards.build_name in config["frequencies"] and 'narrow_bandwidth' in config["frequencies"][wildcards.build_name]:
+        return config["frequencies"][wildcards.build_name]["narrow_bandwidth"]
+    # check if parameters.yaml contains frequencies:default:narrow_bandwidth
+    elif "frequencies" in config and "narrow_bandwidth" in config["frequencies"]["default"]:
+        return config["frequencies"]["default"]["narrow_bandwidth"]
+    # else return augur frequencies default value
+    else:
+        return 0.0833
 
 def _get_upload_inputs(wildcards):
     # Do whatever the configuration says if it has opinions.

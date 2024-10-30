@@ -71,7 +71,7 @@ files:
   mutational_fitness_distance_map: "defaults/mutational_fitness_distance_map.json"
   sites_to_mask: "defaults/sites_ignored_for_tree_topology.txt"
 
-# Define genes to translate during alignment by nextalign.
+# Define genes to translate during alignment by nextclade.
 genes: ["ORF1a", "ORF1b", "S", "ORF3a", "E", "M", "ORF6", "ORF7a", "ORF7b", "ORF8", "N", "ORF9b"]
 
 # Filter settings
@@ -134,11 +134,30 @@ refine:
 ancestral:
   inference: "joint"
 
+colors:
+  default:
+    # Amount of time back to color clades, if "all" then all clades are colored
+    # Can be specified per build in builds.yaml
+    clade_recency: "all"
+
 # Frequencies settings
 frequencies:
 
-  # min_date is set by default to 1 year before present
-  # but can be explicitly set if desired
+  # default settings that can be over-ridden for specific builds
+  default:
+
+    # min_date is set by default to 1 year before present
+    min_date: "1Y"
+
+    # max_date is set by default to present date - recent_days_to_censor
+
+    # KDE bandwidths in proportion of a year to use per strain.
+    # using 1M bandwidth by default
+    narrow_bandwidth: 0.0833
+
+
+  # settings that can be over-ridden across all builds, but not for specific builds
+  recent_days_to_censor: 0
 
   # Number of weeks between pivots
   pivot_interval: 1
@@ -146,9 +165,7 @@ frequencies:
   # Measure pivots in weeks
   pivot_interval_units: "weeks"
 
-  # KDE bandwidths in proportion of a year to use per strain.
-  # using 15 day bandwidth
-  narrow_bandwidth: 0.041
+  # Weight of KDE that uses wide bandwidth
   proportion_wide: 0.0
 
   # Diffusion frequency settings
