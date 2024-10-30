@@ -142,6 +142,11 @@
       "key": "zip_code_exposure",
       "title": "Zip code of exposure",
       "type": "categorical"
+    },
+	{
+      "key": "maven_number",
+      "title": "Maven number",
+      "type": "categorical"
     }
 ],
   "geo_resolutions": [
